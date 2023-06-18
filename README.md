@@ -7,10 +7,13 @@ command: .\venv\Scripts\activate
 Step 3: Install all the modules from the requirements.txt file.
 command: pip install -r requirements.txt
 
-Step 4: Install all the dependencies for Angular
+Step 4: migrate all migrations
+command: python manage.py migrate
+
+Step 5: Install all the dependencies for Angular
 command: npm install
 
-Step 5: Now run both stack
+Step 6: Now run both stack
 command for Angular: ng serve --open
 command for django: python manage.py runserver
 
