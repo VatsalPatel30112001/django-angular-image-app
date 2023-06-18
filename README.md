@@ -4,16 +4,16 @@ command: python -m venv venv
 Step 2: Activate the environment
 command: .\venv\Scripts\activate
 
-Step 2: Install all the modules from the requirements.txt file.
+Step 3: Install all the modules from the requirements.txt file.
 command: pip install -r requirements.txt
 
-Step 3: Commit all migrations in django
+Step 4: Commit all migrations in django
 command: python manage.py migrate
 
-Step 4: Install all the dependencies for Angular
+Step 5: Install all the dependencies for Angular
 command: npm install
 
-Step 5: Now run both stack
+Step 6: Now run both stack
 command for Angular: ng serve --open
 command for django: python manage.py runserver
 
