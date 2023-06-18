@@ -1,6 +1,9 @@
 Step 1: Create enviroment for django app
 command: python -m venv venv
 
+Step 2: Activate the environment
+command: .\venv\Scripts\activate
+
 Step 2: Install all the modules from the requirements.txt file.
 command: pip install -r requirements.txt
 
