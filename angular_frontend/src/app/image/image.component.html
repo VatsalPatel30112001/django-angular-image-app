@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <h3>Welcome To The Image Page</h3>
+        <a href="/signup" class="logout">
+          <button class="btn btn-logout">LogOut</button>
+        </a>
+      </div>
+      <div class="form">
+        <form (ngSubmit)="submitForm()" enctype="multipart/form-data">
+          <h3>Upload An Image</h3>
+          <input
+            class="image"
+            type="file"
+            name="image"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+          />
+          <input
+            class="title"
+            type="text"
+            name="title"
+            placeholder="Enter Image Title Here"
+            [(ngModel)]="title"
+          />
+          <input
+            class="desc"
+            type="text"
+            name="desc"
+            placeholder="Enter Image Description Here"
+            [(ngModel)]="desc"
+          />
+          <button class="btn btn-upload" type="submit">Upload</button>
+          <div *ngIf="message" class="msg">
+            <h3 class="h3">
+              {{ message }}
+            </h3>
+          </div>
+        </form>
+      </div>
+      <h2>Your Uploaded Images</h2>
+      <div class="grid_main">
+        <div class="grid_div" *ngFor="let image of images">
+          <img
+            class="grid_img"
+            style="width: 200px; height: 200px"
+            [src]="'http://localhost:8000/media/' + image.fields.image"
+            alt=""
+          />
+          <h2 class="grid_h3">{{ image.fields.title }}</h2>
+          <a routerLink="/soloimage/{{ image.pk }}" style="">
+            <button class="btn btn-primary btn-clk">Click To View</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

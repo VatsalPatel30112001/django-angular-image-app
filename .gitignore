@@ -1,0 +1,6 @@
+/myenv
+/angular_frontend/node_modules
+/angular_frontend/.angular
+/angular_frontend/.vscode
+/django_project/db.sqlite3
+/.vscode

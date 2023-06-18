@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Page</title>
+  </head>
+  <body>
+    <div *ngIf="image" class="container">
+      <h2>Welcome To The Image-View Page</h2>
+      <img
+        class="img"
+        style="width: 300px; height: 300px"
+        [src]="'http://localhost:8000/media/' + image[0].fields.image"
+        alt=""
+      />
+      <h3 class="img_title">{{ image[0].fields.title }}</h3>
+      <p class="img_desc">{{ image[0].fields.desc }}</p>
+      <div class="links">
+        <a routerLink="/delete/{{ image[0].pk }}">
+          <button class="btn btn-delete">Delete</button>
+        </a>
+        <a routerLink="/image">
+          <button class="btn btn-back">GoBack</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

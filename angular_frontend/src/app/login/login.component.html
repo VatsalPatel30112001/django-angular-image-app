@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="login">
+      <h2>Login</h2>
+      <form (ngSubmit)="submitForm()">
+        <input
+          name="email"
+          [(ngModel)]="email"
+          placeholder="E-Mail Address"
+          type="text"
+        />
+        <input
+          id="pw"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Password"
+          type="password"
+        />
+        <input type="submit" class="animated" value="Login" />
+      </form>
+      <a class="forgot" href="/signup">Click Here To Register</a>
+      <div *ngIf="message" class="msg">
+        <h3 class="h3">
+          {{ message }}
+        </h3>
+      </div>
+    </div>
+  </body>
+</html>
